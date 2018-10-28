@@ -20,5 +20,9 @@ I have the Pimoroni BME680 sensor from [here](https://shop.pimoroni.com/products
 ## MU
 [MU](https://codewith.mu/) is a QT5 GUI which allows programming with the micropython board, but also [live plotting of data](https://codewith.mu/en/tutorials/1.0/plotter), just by printing a tuple of data. Github source [here](https://github.com/mu-editor/mu), and for further inspiration see https://madewith.mu/
 
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/mu_bme680.png" width="700">
+</p>
+
 ## Display
 I wish to add a display, perhaps https://thepihut.com/collections/lcds-displays/products/adafruit-1-54-tri-color-eink-epaper-display-with-sram-ada3625
