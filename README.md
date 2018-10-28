@@ -4,3 +4,7 @@ I am running Home-Assistant on a raspberry pi, and whilst the sensors could be c
 
 ### The Circuitpython Board - Metro M0 Express
 This project uses the Adafruit [Metro M0 Express](https://learn.adafruit.com/adafruit-metro-m0-express-designed-for-circuitpython/overview). This board has sufficient memory that the entire [Circuitpython helpers library](https://github.com/adafruit/Adafruit_CircuitPython_Bundle) can be loaded. It has both 3.3 and 5V output, and all the connections are clearly labelled. Don't forget to [update the firmware](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython) to Circuitpython 3.
+
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/board.jpg" width="500">
+</p>
