@@ -128,3 +128,6 @@ I wish to add a display, perhaps https://thepihut.com/collections/lcds-displays/
 
 ## Streaming data in Jupyter
 For streaming see http://pyviz.org/tutorial/11_Streaming_Data.html
+
+## Imports
+We will require https://circuitpython.readthedocs.io/en/3.x/docs/library/ujson.html?highlight=ujson
