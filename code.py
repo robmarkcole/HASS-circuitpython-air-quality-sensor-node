@@ -73,7 +73,6 @@ while True:
     data_dict['particles_50um'] = particles_50um
     data_dict['particles_100um'] = particles_100um
     print(data_dict)
-    print("---------------------------------------")
 
     buffer = buffer[32:]
     # print("Buffer ", buffer)
