@@ -1,8 +1,8 @@
-from busio import I2C
-import adafruit_bme680
-import time
 import board
+import busio
+from busio import I2C
 from digitalio import DigitalInOut, Direction
+import adafruit_bme680
 
 try:
     import struct
@@ -12,21 +12,23 @@ except ImportError:
 led = DigitalInOut(board.D13)
 led.direction = Direction.OUTPUT
 
-## Setup BME
+# Setup BME
 # Create library object using our Bus I2C port
 i2c = I2C(board.SCL, board.SDA)
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 # change this to match the location's pressure (hPa) at sea level
 bme680.sea_level_pressure = 1013.25
 
-## Main code - primarily reading from the PMS sensor
+# Main  loop reads from PMS sensor
 # Connect the Sensor's TX pin to the board's RX pin
 uart = busio.UART(board.TX, board.RX, baudrate=9600)
-
 buffer = []
+
 while True:
     data = uart.read(32)  # read up to 32 bytes
     data = list(data)
+    # print("read: ", data)          # this is a bytearray type
+
     buffer += data
 
     while buffer and buffer[0] != 0x42:
@@ -61,6 +63,8 @@ while True:
     data_dict = {}
     data_dict['temperature'] = bme680.temperature
     data_dict['humidity'] = bme680.humidity
+    data_dict['pressure'] = bme680.pressure
+    data_dict['gas'] = bme680.gas
     data_dict['particles_03um'] = particles_03um
     data_dict['particles_05um'] = particles_05um
     data_dict['particles_10um'] = particles_10um
@@ -69,5 +73,6 @@ while True:
     data_dict['particles_100um'] = particles_100um
     print(data_dict)
     print("---------------------------------------")
-    time.sleep(2)
+
     buffer = buffer[32:]
+    # print("Buffer ", buffer)
