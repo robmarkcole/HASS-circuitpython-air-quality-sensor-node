@@ -25,11 +25,12 @@ uart = busio.UART(board.TX, board.RX, baudrate=9600)
 buffer = []
 
 while True:
-    data = uart.read(32)  # read up to 32 bytes
-    data = list(data)
-    # print("read: ", data)          # this is a bytearray type
-
-    buffer += data
+    try:
+        data = uart.read(32)  # read up to 32 bytes
+        data = list(data)
+        buffer += data
+    except:
+        continue
 
     while buffer and buffer[0] != 0x42:
         buffer.pop(0)
