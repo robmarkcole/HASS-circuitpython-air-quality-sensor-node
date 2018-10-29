@@ -27,5 +27,9 @@ I have the Pimoroni BME680 sensor from [here](https://shop.pimoroni.com/products
 ## VS-code
 Developing Circuitpython in VS-code is quite a decent experience. I use the terminal to connect to the board using `screen`. First check which port the board is on with `ls /dev/tty.*` then connect to the board with e.g. `screen /dev/tty.SLAB_USBtoUART`. As the board shows up as a USB device you can drag the `code.py` file into VS-code and edit. Om hitting `save` edits are applied immediately.
 
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/vs_code.png" width="1000">
+</p>
+
 ## Display
 I wish to add a display, perhaps https://thepihut.com/collections/lcds-displays/products/adafruit-1-54-tri-color-eink-epaper-display-with-sram-ada3625
