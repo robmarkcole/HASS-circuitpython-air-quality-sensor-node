@@ -20,8 +20,6 @@ Developing Circuitpython in [MS VS-code](https://code.visualstudio.com/) is quit
 <img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/vs_code.png" width="1000">
 </p>
 
-## ujson library
-This project requires the ujson module documented [here](https://circuitpython.readthedocs.io/en/3.x/docs/library/ujson.html?highlight=ujson), but I've not located on the web. Alternatively we can manually parse the dict to json using:
 
 ## MU
 If VS code is overkill for your application, [MU](https://codewith.mu/) is a user friendly QT5 GUI which allows programming with the circuitpython/micropython, just `pip install mu-editor` and run with `mu-editor`. It also allows [live plotting of data](https://codewith.mu/en/tutorials/1.0/plotter) just by printing a tuple of data. Github source [here](https://github.com/mu-editor/mu), and for further inspiration see https://madewith.mu/
@@ -29,12 +27,6 @@ If VS code is overkill for your application, [MU](https://codewith.mu/) is a use
 <p align="center">
 <img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/mu_bme680.png" width="1000">
 </p>
-
-## Display
-I wish to add a display, perhaps https://thepihut.com/collections/lcds-displays/products/adafruit-1-54-tri-color-eink-epaper-display-with-sram-ada3625
-
-## Streaming data in Jupyter
-For streaming see http://pyviz.org/tutorial/11_Streaming_Data.html
 
 ## Home-Asasistant
 We integrate the board via a [serial sensor](https://www.home-assistant.io/components/sensor.serial/) and breakout the individual readings using [template sensors](https://www.home-assistant.io/components/sensor.template/):
@@ -90,9 +82,15 @@ history_graph:
       - sensor.particles_100um
 ```
 
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/ha.png" width="700">
+</p>
 
-## Imports
-We will require https://circuitpython.readthedocs.io/en/3.x/docs/library/ujson.html?highlight=ujson
+## Display
+I wish to add a display, perhaps https://thepihut.com/collections/lcds-displays/products/adafruit-1-54-tri-color-eink-epaper-display-with-sram-ada3625
+
+## Streaming data in Jupyter
+For streaming see http://pyviz.org/tutorial/11_Streaming_Data.html
 
 ## Links
 * [Awesome Circuitpython](https://github.com/adafruit/awesome-circuitpython)
