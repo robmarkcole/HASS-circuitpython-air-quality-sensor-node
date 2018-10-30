@@ -11,81 +11,7 @@ This project uses the Adafruit [Metro M0 Express](https://learn.adafruit.com/ada
 </p>
 
 ### PMS5003 laser air sensor
-This sensor and accompanying Circuitpython code is on the Adafruit website [here](https://learn.adafruit.com/pm25-air-quality-sensor). For more links see [here](https://github.com/OxygenLithium/Pollutant-Mapping). Basic usage is a bit more involved than the BME, as there are several checks on the data:
-
-```python
-import board
-import busio
-from digitalio import DigitalInOut, Direction
-
-try:
-    import struct
-except ImportError:
-    import ustruct as struct
-
-led = DigitalInOut(board.D13)
-led.direction = Direction.OUTPUT
-
-# Connect the Sensor's TX pin to the board's RX pin
-uart = busio.UART(board.TX, board.RX, baudrate=9600)
-
-buffer = []
-
-while True:
-    data = uart.read(32)  # read up to 32 bytes
-    data = list(data)
-    # print("read: ", data)          # this is a bytearray type
-
-    buffer += data
-
-    while buffer and buffer[0] != 0x42:
-        buffer.pop(0)
-
-    if len(buffer) > 200:
-        buffer = []  # avoid an overrun if all bad data
-    if len(buffer) < 32:
-        continue
-
-    if buffer[1] != 0x4d:
-        buffer.pop(0)
-        continue
-
-    frame_len = struct.unpack(">H", bytes(buffer[2:4]))[0]
-    if frame_len != 28:
-        buffer = []
-        continue
-
-    frame = struct.unpack(">HHHHHHHHHHHHHH", bytes(buffer[4:]))
-
-    pm10_standard, pm25_standard, pm100_standard, pm10_env, \
-        pm25_env, pm100_env, particles_03um, particles_05um, particles_10um, \
-        particles_25um, particles_50um, particles_100um, skip, checksum = frame
-
-    check = sum(buffer[0:30])
-
-    if check != checksum:
-        buffer = []
-        continue
-
-    print("Concentration Units (standard)")
-    print("---------------------------------------")
-    print("PM 1.0: %d\tPM2.5: %d\tPM10: %d" %
-          (pm10_standard, pm25_standard, pm100_standard))
-    print("Concentration Units (environmental)")
-    print("---------------------------------------")
-    print("PM 1.0: %d\tPM2.5: %d\tPM10: %d" % (pm10_env, pm25_env, pm100_env))
-    print("---------------------------------------")
-    print("Particles > 0.3um / 0.1L air:", particles_03um)
-    print("Particles > 0.5um / 0.1L air:", particles_05um)
-    print("Particles > 1.0um / 0.1L air:", particles_10um)
-    print("Particles > 2.5um / 0.1L air:", particles_25um)
-    print("Particles > 5.0um / 0.1L air:", particles_50um)
-    print("Particles > 10 um / 0.1L air:", particles_100um)
-    print("---------------------------------------")
-
-    buffer = buffer[32:]
-    # print("Buffer ", buffer)
-```
+This sensor and accompanying Circuitpython code is on the Adafruit website [here](https://learn.adafruit.com/pm25-air-quality-sensor). For more links see [here](https://github.com/OxygenLithium/Pollutant-Mapping).
 
 ## VS-code
 Developing Circuitpython in [MS VS-code](https://code.visualstudio.com/) is quite a nice experience. I have the [pycom VS code extension installed](https://docs.pycom.io/pymakr/installation/vscode) which adds a terminal. I use the terminal to connect to the board using `screen`. First check which port the board is on with `ls /dev/tty.*` then connect to the board with e.g. `screen /dev/tty.usbmodem141401`. As the board shows up as a USB device you can drag the `code.py` file into VS-code and edit. On hitting `save` the board restarts and the edits are immediately implemented.
@@ -109,6 +35,55 @@ I wish to add a display, perhaps https://thepihut.com/collections/lcds-displays/
 
 ## Streaming data in Jupyter
 For streaming see http://pyviz.org/tutorial/11_Streaming_Data.html
+
+## Home-Asasistant
+We integrate the sensor as a serial sensor:
+```yaml
+sensor:
+  - platform: serial
+    serial_port: /dev/tty.usbmodem141401
+  - platform: template
+    sensors:
+      particles_03um:
+        friendly_name: particles_03um
+        value_template: "{{ states.sensor.serial_sensor.attributes.a }}"
+  - platform: template
+    sensors:
+      particles_05um:
+        friendly_name: particles_05um
+        value_template: "{{ states.sensor.serial_sensor.attributes.b }}"
+  - platform: template
+    sensors:
+      particles_10um:
+        friendly_name: particles_10um
+        value_template: "{{ states.sensor.serial_sensor.attributes.c }}"
+  - platform: template
+    sensors:
+      particles_25um:
+        friendly_name: particles_25um
+        value_template: "{{ states.sensor.serial_sensor.attributes.d }}"
+  - platform: template
+    sensors:
+      particles_50um:
+        friendly_name: particles_50um
+        value_template: "{{ states.sensor.serial_sensor.attributes.e }}"
+  - platform: template
+    sensors:
+      particles_100um:
+        friendly_name: particles_100um
+        value_template: "{{ states.sensor.serial_sensor.attributes.f }}"
+
+history_graph:
+  pms5003:
+    entities:
+      - sensor.particles_03um
+      - sensor.particles_05um
+      - sensor.particles_10um
+      - sensor.particles_25um
+      - sensor.particles_50um
+      - sensor.particles_100um
+```
+
 
 ## Imports
 We will require https://circuitpython.readthedocs.io/en/3.x/docs/library/ujson.html?highlight=ujson
