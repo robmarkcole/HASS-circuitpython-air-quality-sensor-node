@@ -10,29 +10,6 @@ This project uses the Adafruit [Metro M0 Express](https://learn.adafruit.com/ada
 <img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/board.jpg" width="900">
 </p>
 
-
-### BME680
-I have the Pimoroni BME680 sensor from [here](https://shop.pimoroni.com/products/bme680-breakout), which is compatible with the Circuitpython code from [here](https://learn.adafruit.com/adafruit-bme680-humidity-temperature-barometic-pressure-voc-gas/python-circuitpython). Note the BME680 library is included in the Circuitpython bundle.
-Basic usage of the BME680 is quite straightforward:
-```python
-from busio import I2C
-import adafruit_bme680
-import time
-import board
-
-# Create library object using our Bus I2C port
-i2c = I2C(board.SCL, board.SDA)
-bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
-
-# change this to match the location's pressure (hPa) at sea level
-bme680.sea_level_pressure = 1013.25
-
-while True:
-    print((bme680.temperature, bme680.humidity))
-    time.sleep(2)
-```
-For some reason, after having worked fine for several hours, I started getting an exception `RuntimeError: SDA or SCL needs a pull up` so have removed the BME.
-
 ### PMS5003 laser air sensor
 This sensor and accompanying Circuitpython code is on the Adafruit website [here](https://learn.adafruit.com/pm25-air-quality-sensor). For more links see [here](https://github.com/OxygenLithium/Pollutant-Mapping). Basic usage is a bit more involved than the BME, as there are several checks on the data:
 
@@ -118,7 +95,7 @@ Developing Circuitpython in [MS VS-code](https://code.visualstudio.com/) is quit
 </p>
 
 ## ujson library
-This project requires the ujson module documented [here](https://circuitpython.readthedocs.io/en/3.x/docs/library/ujson.html?highlight=ujson), but I've not located on the web.
+This project requires the ujson module documented [here](https://circuitpython.readthedocs.io/en/3.x/docs/library/ujson.html?highlight=ujson), but I've not located on the web. Alternatively we can manually parse the dict to json using:
 
 ## MU
 If VS code is overkill for your application, [MU](https://codewith.mu/) is a user friendly QT5 GUI which allows programming with the circuitpython/micropython, just `pip install mu-editor` and run with `mu-editor`. It also allows [live plotting of data](https://codewith.mu/en/tutorials/1.0/plotter) just by printing a tuple of data. Github source [here](https://github.com/mu-editor/mu), and for further inspiration see https://madewith.mu/
