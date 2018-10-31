@@ -18,7 +18,7 @@ This sensor and accompanying Circuitpython code is on the Adafruit website [here
 For development I recommend [MU](https://codewith.mu/), which is a user friendly QT5 GUI which allows programming with the circuitpython/micropython, just `pip install mu-editor` and run with `mu-editor`. It also allows [live plotting of data](https://codewith.mu/en/tutorials/1.0/plotter) just by printing a tuple of data. Github source [here](https://github.com/mu-editor/mu), and for further inspiration see https://madewith.mu/.
 
 <p align="center">
-<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/mu_bme680.png" width="1000">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/mu.png" width="1000">
 </p>
 
 ## Home-Asasistant
