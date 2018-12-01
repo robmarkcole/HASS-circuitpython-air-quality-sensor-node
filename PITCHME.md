@@ -1,5 +1,5 @@
 ## Getting started with CircuitPython
-#### Robin Cole - 20/11/2018
+#### Robin Cole - 4/12/2018
 
 
 <p align="center">
@@ -11,7 +11,7 @@
 ### CircuitPython
 * CircuitPython is Python 3 running on a single board computer
 * Ideal for beginners - boards show as USB drive
-* Connect sensors and collect data
+* Connect sensors and gather data
 * https://learn.adafruit.com/welcome-to-circuitpython/
 
 <p align="center">
@@ -29,19 +29,12 @@
 
 ## Air Quality project
 
-* Low cost air quality monitor
+* [Low cost air quality monitor](https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node)
 * PM1, PM2.5 and PM10 particulates
-* https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node)
-
-![Alt Text](https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/ezgif.com-video-to-gif.gif)
-
-
----
-
-## Some air quality data
+* Video - https://cdn-shop.adafruit.com/product-videos/1200x900/3686-04.mp4
 
 <p align="center">
-<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/data.png" width="400">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/summary_pic.png" width="400">
 </p>
 
 ---
@@ -51,7 +44,9 @@
 * Get more people in involved
 * Go wireless & low power
 
-
+<p align="center">
+<img src="https://kapustacc.files.wordpress.com/2017/11/20171125-img_3041-3.jpg" width="400">
+</p>
 
 ---
 
