@@ -12,7 +12,6 @@
 * CircuitPython is Python 3 running on a single board computer
 * Ideal for beginners - boards show as USB drive
 * Connect sensors and gather data
-* https://learn.adafruit.com/welcome-to-circuitpython/
 
 <p align="center">
 <img src="https://cdn-shop.adafruit.com/1200x900/3403-04.jpg" width="300">
@@ -34,7 +33,7 @@
 
 
 <p align="center">
-<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/summary_pic.png" width="400">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/summary_pic.png" width="300">
 </p>
 
 ---
@@ -45,7 +44,7 @@
 * Go wireless & low power
 
 <p align="center">
-<img src="https://kapustacc.files.wordpress.com/2017/11/20171125-img_3041-3.jpg" width="400">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/future.png" width="400">
 </p>
 
 ---
