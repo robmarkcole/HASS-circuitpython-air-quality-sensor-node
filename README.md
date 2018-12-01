@@ -98,6 +98,9 @@ Developing Circuitpython in [MS VS-code](https://code.visualstudio.com/) is quit
 <img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/vs_code.png" width="1000">
 </p>
 
+## Presentation
+See a presentation on this project at https://gitpitch.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/master
+
 ## Links
 * [Awesome Circuitpython](https://github.com/adafruit/awesome-circuitpython)
 * https://www.adafruit.com/circuitpython
