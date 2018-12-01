@@ -38,12 +38,18 @@
 <img src="https://raw.githubusercontent.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/master/images/board.jpg" width="400">
 </p>
 
+<p align="center">
+<img src="https://cdn-shop.adafruit.com/product-videos/1200x900/3686-04.mp4" width="400">
+</p>
 
+4
 ---
 
 ## Some air quality data
 
-
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/data.png" width="400">
+</p>
 
 ---
 
