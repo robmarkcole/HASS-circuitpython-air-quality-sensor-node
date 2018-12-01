@@ -33,7 +33,15 @@
 
 
 <p align="center">
-<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/summary_pic.png" width="300">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/summary_pic.jpg" width="300">
+</p>
+
+---
+
+## Air Quality data
+
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/data.jpg" width="300">
 </p>
 
 ---
@@ -44,7 +52,7 @@
 * Go wireless & low power
 
 <p align="center">
-<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/future.png" width="400">
+<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/future.jpg" width="400">
 </p>
 
 ---
