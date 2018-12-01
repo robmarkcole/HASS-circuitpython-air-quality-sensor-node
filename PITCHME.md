@@ -33,16 +33,9 @@
 * PM1, PM2.5 and PM10 particulates
 * https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node)
 
+![Alt Text](https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/ezgif.com-video-to-gif.gif)
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/master/images/board.jpg" width="400">
-</p>
 
-<p align="center">
-<img src="https://cdn-shop.adafruit.com/product-videos/1200x900/3686-04.mp4" width="400">
-</p>
-
-4
 ---
 
 ## Some air quality data
