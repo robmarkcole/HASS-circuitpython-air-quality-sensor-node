@@ -31,7 +31,7 @@
 
 * [Low cost air quality monitor](https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node)
 * PM1, PM2.5 and PM10 particulates
-* Video - https://cdn-shop.adafruit.com/product-videos/1200x900/3686-04.mp4
+
 
 <p align="center">
 <img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/summary_pic.png" width="400">
@@ -55,3 +55,4 @@
 - CircuitPython is Python 3 running on a single board computer
 - Gather data and get involved in citizen science
 - Demo time...
+- [Video](https://cdn-shop.adafruit.com/product-videos/1200x900/3686-04.mp4)
