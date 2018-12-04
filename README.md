@@ -73,10 +73,6 @@ For streaming see http://pyviz.org/tutorial/11_Streaming_Data.html
 ## VS-code
 Developing Circuitpython in [MS VS-code](https://code.visualstudio.com/) is quite a nice experience, although not as seamless as using Mu. For instance, I found my terminal often froze between restarts of the board, which wasn't an issue with Mu. I have the [pycom VS code extension installed](https://docs.pycom.io/pymakr/installation/vscode) which adds a terminal. I use the terminal to connect to the board using `screen`. First check which port the board is on with `ls /dev/tty.*` then connect to the board with e.g. `screen /dev/tty.usbmodem141401`. As the board shows up as a USB device you can drag the `code.py` file into VS-code and edit. On hitting `save` the board restarts and the edits are immediately implemented.
 
-<p align="center">
-<img src="https://github.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/blob/master/images/vs_code.png" width="1000">
-</p>
-
 ## Presentation
 See a presentation on this project at https://gitpitch.com/robmarkcole/HASS-circuitpython-air-quality-sensor-node/master
 
