@@ -2,7 +2,6 @@ import board
 import busio
 from busio import I2C
 from digitalio import DigitalInOut, Direction
-#from ujson import dumps
 
 try:
     import struct
@@ -55,28 +54,19 @@ while True:
         continue
 
     data_dict = {}
-    data_dict['particles_03um'] = particles_03um
-    data_dict['particles_05um'] = particles_05um
-    data_dict['particles_10um'] = particles_10um
-    data_dict['particles_25um'] = particles_25um
-    data_dict['particles_50um'] = particles_50um
-    data_dict['particles_100um'] = particles_100um
-    #print(data_dict)
-    # print(tuple(data_dict.values())) # for mu plotting
+    data_dict['pm10_standard'] = pm10_standard
+    data_dict['pm25_standard'] = pm25_standard
+    data_dict['pm100_standard'] = pm100_standard
+  #  print(data_dict)
+  #  print(tuple(data_dict.values())) # for mu plotting
     
     # print json string without json.dumps
-    data_string = """ "a": {a}, "b": {b}, "c": {c}, "d": {d}, "e": {e}, "f": {f} """.format(
-            a=particles_03um,
-            b=particles_05um,
-            c=particles_10um,
-            d=particles_25um,
-            e=particles_50um,
-            f=particles_100um
-            )
+    data_string = """ "a": {a}, "b": {b}, "c": {c}""".format(
+            a=pm10_standard,
+            b=pm25_standard,
+            c=pm100_standard
+            ) 
 
     print(""" {""" + data_string + """ } """)
     
-    
-
     buffer = buffer[32:]
-    # print("Buffer ", buffer)

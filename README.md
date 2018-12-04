@@ -32,17 +32,17 @@ We integrate the board via a [serial sensor](https://www.home-assistant.io/compo
 ```yaml
 sensor:
   - platform: serial
-    serial_port: /dev/tty.usbmodem141401
+    serial_port: /dev/tty.usbmodem141301
   - platform: template
     sensors:
-      particles_03um:
-        friendly_name: particles_03um
+      particles_01um:
+        friendly_name: particles_01um
         unit_of_measurement: 'particles'
         value_template: "{{ states.sensor.serial_sensor.attributes.a }}"
   - platform: template
     sensors:
-      particles_05um:
-        friendly_name: particles_05um
+      particles_025um:
+        friendly_name: particles_025um
         unit_of_measurement: 'particles'
         value_template: "{{ states.sensor.serial_sensor.attributes.b }}"
   - platform: template
@@ -51,34 +51,13 @@ sensor:
         friendly_name: particles_10um
         unit_of_measurement: 'particles'
         value_template: "{{ states.sensor.serial_sensor.attributes.c }}"
-  - platform: template
-    sensors:
-      particles_25um:
-        friendly_name: particles_25um
-        unit_of_measurement: 'particles'
-        value_template: "{{ states.sensor.serial_sensor.attributes.d }}"
-  - platform: template
-    sensors:
-      particles_50um:
-        friendly_name: particles_50um
-        unit_of_measurement: 'particles'
-        value_template: "{{ states.sensor.serial_sensor.attributes.e }}"
-  - platform: template
-    sensors:
-      particles_100um:
-        friendly_name: particles_100um
-        unit_of_measurement: 'particles'
-        value_template: "{{ states.sensor.serial_sensor.attributes.f }}"
 
 history_graph:
   pms5003:
     entities:
-      - sensor.particles_03um
-      - sensor.particles_05um
+      - sensor.particles_01um
+      - sensor.particles_025um
       - sensor.particles_10um
-      - sensor.particles_25um
-      - sensor.particles_50um
-      - sensor.particles_100um
 ```
 
 <p align="center">
